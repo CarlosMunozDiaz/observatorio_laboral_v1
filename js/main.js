@@ -4090,8 +4090,8 @@ function getOutTooltip(tooltip) {
 }
 
 function positionTooltip(event, tooltip) {
-    let x = event.pageX;
-    let y = event.pageY;
+    let x = event.pageX || window.event.pageX;
+    let y = event.pageY || window.event.pageY;
 
     //Tamaño
     let ancho = parseInt(tooltip.style('width'));

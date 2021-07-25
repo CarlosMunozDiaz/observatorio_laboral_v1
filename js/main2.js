@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert(data);
+        alert("Entra");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -103,8 +103,8 @@ function getFirstChart() {
                     });
                 
                     //Tooltip
-                    // positionTooltip(window.event, tooltip);
-                    // getInTooltip(tooltip);
+                    positionTooltip(window.event, tooltip);
+                    getInTooltip(tooltip);
                 })
                 .on('mouseout', function(d, i, e) {
                     //Quitamos los estilos de la línea
@@ -114,7 +114,7 @@ function getFirstChart() {
                     });
                 
                     //Quitamos el tooltip
-                    //getOutTooltip(tooltip); 
+                    getOutTooltip(tooltip); 
                 })
                 .transition()
                 .duration(3000)
@@ -143,4 +143,33 @@ function setChart(chartBlock, margin) {
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
     return {margin, width, height, chart};
+}
+
+/*
+* FUNCIONES TOOLTIP
+*/
+function getInTooltip(tooltip) {
+    tooltip.style('display','block').style('opacity', 1);
+}
+
+function getOutTooltip(tooltip) {
+    tooltip.transition().style('display','none').style('opacity', 0);
+}
+
+function positionTooltip(event, tooltip) {
+    let x = event.pageX || window.event.pageX;
+    let y = event.pageY || window.event.pageY;
+
+    //Tamaño
+    let ancho = parseInt(tooltip.style('width'));
+    
+    let distanciaAncho = isNaN(ancho) ? 100 : ancho;
+
+    //Posición
+    let left = window.innerWidth / 2 > x ? 'left' : 'right';
+    let mobile = window.innerWidth < 525 ? -40 : 40;
+    let horizontalPos = left == 'left' ? 20 : - distanciaAncho + mobile;
+
+    tooltip.style('top', y + 17 + 'px');
+    tooltip.style('left', (x + horizontalPos) + 'px');
 }
