@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert("Entra4");
+        alert("Entra5");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -86,7 +86,7 @@ function getFirstChart() {
                     let css = e[i].getAttribute('class').split('-')[1];
                     
                     //Texto
-                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + numberWithCommas(d['América Latina y Caribe']) + '%</p>';
+                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + d['América Latina y Caribe'] + '%</p>';
                 
                     tooltip.html(html);
 
@@ -145,9 +145,9 @@ function setChart(chartBlock, margin) {
 }
 
 /* Helper */
-function numberWithCommas(x) {
-    return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
-}
+// function numberWithCommas(x) {
+//     return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+// }
 
 /*
 * FUNCIONES TOOLTIP
