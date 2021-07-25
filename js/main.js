@@ -1,5 +1,5 @@
-let tooltip = d3.select('#chartTooltip');
-let charts = document.getElementsByClassName('chart__viz');
+// let tooltip = d3.select('#chartTooltip');
+// let charts = document.getElementsByClassName('chart__viz');
 
 alert("MAIN");
 
@@ -3896,7 +3896,7 @@ function get4_6Chart() {
     });
 }
 
-getFirstChart();
+//getFirstChart();
 // getFirstBisChart();
 // getSecondChart();
 // getSecondBisChart();
