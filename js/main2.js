@@ -86,7 +86,6 @@ function getFirstChart() {
                     let css = e[i].getAttribute('class').split('-')[1];
                     
                     //Texto
-                    //let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + d['América Latina y Caribe'] + '%</p>';
                     let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text"><p>' + d['América Latina y Caribe'].toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".") + '%</p>';
                     tooltip.html(html);
 
