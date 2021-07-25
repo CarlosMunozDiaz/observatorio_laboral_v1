@@ -1,4 +1,7 @@
 let tooltip = d3.select('#chartTooltip');
+let charts = document.getElementsByClassName('chart__viz');
+
+alert("MAIN");
 
 function getFirstChart() {
     //Bloque de la visualización
@@ -3957,9 +3960,6 @@ function isElementInViewport(ele) {
     );
 };
 
-// PRUEBA SCROLL PARA INICIAR ANIMACIÓN CUANDO ENTRE
-let charts = document.getElementsByClassName('chart__viz');
-
 /* Inicialización del gráfico */
 function setChart(chartBlock, margin) {
     let width = parseInt(chartBlock.style('width')) - margin.left - margin.right,
@@ -4078,4 +4078,33 @@ function setMultipleLines(chartBlock, chart, data, dataType, lines, x, y, toolti
 
 function numberWithCommas(x) {
     return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+}
+
+/*
+* FUNCIONES TOOLTIP
+*/
+function getInTooltip(tooltip) {
+    tooltip.style('display','block').style('opacity', 1);
+}
+
+function getOutTooltip(tooltip) {
+    tooltip.transition().style('display','none').style('opacity', 0);
+}
+
+function positionTooltip(event, tooltip) {
+    let x = event.pageX;
+    let y = event.pageY;
+
+    //Tamaño
+    let ancho = parseInt(tooltip.style('width'));
+    
+    let distanciaAncho = isNaN(ancho) ? 100 : ancho;
+
+    //Posición
+    let left = window.innerWidth / 2 > x ? 'left' : 'right';
+    let mobile = window.innerWidth < 525 ? -40 : 40;
+    let horizontalPos = left == 'left' ? 20 : - distanciaAncho + mobile;
+
+    tooltip.style('top', y + 17 + 'px');
+    tooltip.style('left', (x + horizontalPos) + 'px');
 }
