@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert("Entra3");
+        alert("Entra4");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -82,14 +82,11 @@ function getFirstChart() {
                 .attr('x', function(d) { return x(d.Fecha) + x.bandwidth() / 2; })
                 .attr('width', x.bandwidth() / 2)
                 .attr("y", function(d) { return y(0); })
-                .on('click pointerdown mouseover mouseenter mousedown mousemove', function(d, i, e) {
+                .on('touchstart touchmove mouseenter mousemove pointerenter pointermove', function(d, i, e) {
                     let css = e[i].getAttribute('class').split('-')[1];
                     
                     //Texto
-                    // let html = `<p class="chart__tooltip--title">${d.Fecha}</p>
-                    //             <p class="chart__tooltip--text">${numberWithCommas(d['América Latina y Caribe'])}%</p>`;
-
-                    let html = 'Prueba';
+                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + numberWithCommas(d['América Latina y Caribe']) + '%</p>';
                 
                     tooltip.html(html);
 
@@ -108,7 +105,7 @@ function getFirstChart() {
                     positionTooltip(window.event, tooltip);
                     getInTooltip(tooltip);
                 })
-                .on('mouseout', function(d, i, e) {
+                .on('touchout mouseout pointerout', function(d, i, e) {
                     //Quitamos los estilos de la línea
                     let bars = chartBlock.selectAll('.bar');
                     bars.each(function() {
