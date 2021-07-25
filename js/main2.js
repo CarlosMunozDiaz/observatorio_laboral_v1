@@ -145,9 +145,9 @@ function setChart(chartBlock, margin) {
 }
 
 /* Helper */
-// function numberWithCommas(x) {
-//     return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
-// }
+function numberWithCommas(x) {
+    return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+}
 
 /*
 * FUNCIONES TOOLTIP
