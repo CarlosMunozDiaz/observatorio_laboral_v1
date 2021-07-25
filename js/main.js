@@ -1,8 +1,6 @@
 // let tooltip = d3.select('#chartTooltip');
 // let charts = document.getElementsByClassName('chart__viz');
 
-alert("MAIN");
-
 function getFirstChart() {
     //Bloque de la visualización
     let chartBlock = d3.select('#chart-one');
@@ -3896,7 +3894,7 @@ function get4_6Chart() {
     });
 }
 
-//getFirstChart();
+// getFirstChart();
 // getFirstBisChart();
 // getSecondChart();
 // getSecondBisChart();
