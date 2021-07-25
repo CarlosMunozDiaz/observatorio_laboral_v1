@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert(data);
+        alert("Nuevo");
         
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -3894,34 +3894,34 @@ function get4_6Chart() {
     });
 }
 
-// getFirstChart();
-// getFirstBisChart();
-// getSecondChart();
-// getSecondBisChart();
-// getThirdChart();
-// get4_6Chart();
-// getFourthChart();
-// getFourthBisChart();
-// getFifthChart();
-// getFifthBisChart();
-// getSixthChart();
-// getSeventhChart();
-// getEigthChart();
-// getNinethChart();
-// getTenthChart();
-// getEleventhChart();
-// getTwelvethChart();
-// getThirteenthChart();
-// getFourteen_1aChart();
-// getFourteen_1bChart();
-// getFourteen_2aChart();
-// getFourteen_2bChart();
-// getFourteen_3aChart();
-// getFourteen_3bChart();
-// getFifteenChart();
-// getSixteenthChart();
-// getSeventeenthChart();
-// getEighteenthChart();
+getFirstChart();
+getFirstBisChart();
+getSecondChart();
+getSecondBisChart();
+getThirdChart();
+get4_6Chart();
+getFourthChart();
+getFourthBisChart();
+getFifthChart();
+getFifthBisChart();
+getSixthChart();
+getSeventhChart();
+getEigthChart();
+getNinethChart();
+getTenthChart();
+getEleventhChart();
+getTwelvethChart();
+getThirteenthChart();
+getFourteen_1aChart();
+getFourteen_1bChart();
+getFourteen_2aChart();
+getFourteen_2bChart();
+getFourteen_3aChart();
+getFourteen_3bChart();
+getFifteenChart();
+getSixteenthChart();
+getSeventeenthChart();
+getEighteenthChart();
 
 /* Visualization helpers */
 function wrap(text, width) {
@@ -4075,7 +4075,8 @@ function setMultipleLines(chartBlock, chart, data, dataType, lines, x, y, toolti
 }
 
 function numberWithCommas(x) {
-    return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+    //return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+    return x.toString().replace(/\./g, ',');
 }
 
 /*
