@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert("Entra5.4");
+        alert("Entra5.5");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -87,7 +87,7 @@ function getFirstChart() {
                     
                     //Texto
                     //let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + d['América Latina y Caribe'] + '%</p>';
-                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text"><p>' + d['Fecha'] + '%</p>';
+                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text"><p>' + d['América Latina y Caribe'] + '%</p>';
                     tooltip.html(html);
 
                     //Posibilidad visualización línea diferente
