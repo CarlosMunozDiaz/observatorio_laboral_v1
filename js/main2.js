@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert("Entra5");
+        alert("Entra5.2");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -82,39 +82,39 @@ function getFirstChart() {
                 .attr('x', function(d) { return x(d.Fecha) + x.bandwidth() / 2; })
                 .attr('width', x.bandwidth() / 2)
                 .attr("y", function(d) { return y(0); })
-                .on('touchstart touchmove mouseenter mousemove pointerenter pointermove', function(d, i, e) {
-                    let css = e[i].getAttribute('class').split('-')[1];
+                // .on('touchstart touchmove mouseenter mousemove pointerenter pointermove', function(d, i, e) {
+                //     let css = e[i].getAttribute('class').split('-')[1];
                     
-                    //Texto
-                    let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + d['América Latina y Caribe'] + '%</p>';
+                //     //Texto
+                //     let html = '<p class="chart__tooltip--title">' + d.Fecha + '</p><p class="chart__tooltip--text">' + d['América Latina y Caribe'] + '%</p>';
                 
-                    tooltip.html(html);
+                //     tooltip.html(html);
 
-                    //Posibilidad visualización línea diferente
-                    let bars = chartBlock.selectAll('.bar');                    
+                //     //Posibilidad visualización línea diferente
+                //     let bars = chartBlock.selectAll('.bar');                    
                 
-                    bars.each(function() {
-                        this.style.opacity = '0.4';
-                        let split = this.getAttribute('class').split(" ")[1];
-                        if(split == `bar-${css}`) {
-                            this.style.opacity = '1';
-                        }
-                    });
+                //     bars.each(function() {
+                //         this.style.opacity = '0.4';
+                //         let split = this.getAttribute('class').split(" ")[1];
+                //         if(split == `bar-${css}`) {
+                //             this.style.opacity = '1';
+                //         }
+                //     });
                 
-                    //Tooltip
-                    positionTooltip(window.event, tooltip);
-                    getInTooltip(tooltip);
-                })
-                .on('touchout mouseout pointerout', function(d, i, e) {
-                    //Quitamos los estilos de la línea
-                    let bars = chartBlock.selectAll('.bar');
-                    bars.each(function() {
-                        this.style.opacity = '1';
-                    });
+                //     //Tooltip
+                //     positionTooltip(window.event, tooltip);
+                //     getInTooltip(tooltip);
+                // })
+                // .on('touchout mouseout pointerout', function(d, i, e) {
+                //     //Quitamos los estilos de la línea
+                //     let bars = chartBlock.selectAll('.bar');
+                //     bars.each(function() {
+                //         this.style.opacity = '1';
+                //     });
                 
-                    //Quitamos el tooltip
-                    getOutTooltip(tooltip); 
-                })
+                //     //Quitamos el tooltip
+                //     getOutTooltip(tooltip); 
+                // })
                 .transition()
                 .duration(3000)
                 .attr("y", function(d) { return y(Math.max(0, d['América Latina y Caribe'])); })     
