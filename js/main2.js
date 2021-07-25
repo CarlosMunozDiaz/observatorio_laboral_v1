@@ -145,6 +145,11 @@ function setChart(chartBlock, margin) {
     return {margin, width, height, chart};
 }
 
+/* Helper */
+function numberWithCommas(x) {
+    return x.toString().replace(/\./g, ',').replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ".");
+}
+
 /*
 * FUNCIONES TOOLTIP
 */
