@@ -14,7 +14,7 @@ function getFirstChart() {
         }
     }, function(error, data) {
         if (error) throw alert(error);
-        alert("Entra");
+        alert("Entra2");
 
         //Creación del elemento SVG en el contenedor
         let margin = {top: 5, right: 5, bottom: 25, left: 35};
@@ -82,7 +82,7 @@ function getFirstChart() {
                 .attr('x', function(d) { return x(d.Fecha) + x.bandwidth() / 2; })
                 .attr('width', x.bandwidth() / 2)
                 .attr("y", function(d) { return y(0); })
-                .on('mouseover mouseenter mousedown mousemove', function(d, i, e) {
+                .on('click pointerdown mouseover mouseenter mousedown mousemove', function(d, i, e) {
                     let css = e[i].getAttribute('class').split('-')[1];
                     
                     //Texto
