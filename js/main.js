@@ -1,5 +1,5 @@
-// let tooltip = d3.select('#chartTooltip');
-// let charts = document.getElementsByClassName('chart__viz');
+let tooltip = d3.select('#chartTooltip');
+let charts = document.getElementsByClassName('chart__viz');
 
 function getFirstChart() {
     //Bloque de la visualización
